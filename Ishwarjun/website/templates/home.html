@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home-Ishwarjun {% endblock %}
+
+
+{% block body %}
+
+
+{% comment %} hero section {% endcomment %}
+
+<section class="text-gray-600 body-font h-[40rem] " style="background-image: linear-gradient(0deg, rgb(254, 243, 199) 0%, rgba(12, 4, 11, 0.537) 0%), url(https://source.unsplash.com/random/?poor%20children);
+      background-size: cover;
+      background-position: center;">
+        <div class="w-full h-full flex items-center justify-center flex-col">
+          <div class="text-center p-3 lg:w-2/3 ">
+            <h1 class=" sm:text-4xl text-3xl mb-4 font-black text-gray-100">Ishwarjun Foundation </h1>
+            <h1 class=" sm:text-3xl text-3l mb-4 font-black text-gray-100">Empowering Communities, Changing Lives</h1>
+            <p class=" mb-8 text-fuchsia-50">Since our founding in 2005, Ishwarjun Foundation has helped thousands of individuals and families in our community. From providing emergency assistance to helping people find stable housing, we are proud of the impact we have made. But there is still much work to be done, and we are committed to continuing our efforts.</p>
+            
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+      {% comment %} upcoming events section  {% endcomment %}
+
+          
+          <div class=" md:mx-8 my-8">
+            <div >
+            
+            <h1 class = "relative text-center mb-2 font-extrabold md:text-5xl text-3xl"> 
+              Upcoming Event
+            </h1>
+              
+          </div>
+            
+              <div class="flex md:flex-row flex-col items-center ">
+                  <!-- One-third with image -->
+                  <div class="min-w-[200px] md:w-1/3 w-3/5 mx-4 my-4 border-4 rounded md:shadow-[0_35px_100px_-15px_rgba(0,0,0,0.7)] border-black">
+                    <img src="{% static 'images/volunteer.jpg' %}" />
+                  </div>
+                  <!-- Two-thirds with button -->
+                  <div class="md:w-4/5 w-11/12 flex flex-col justify-center items-center ">
+                      <p class="sm:text-2xl
+                       text-center  font-bold  text-black">Be a part of something greater!<br> Join us at our charity event and help spread hope and change.
+                       <br>
+                     Save the dates. {{recent.campaign_name}}
+                      </p>
+                      <button class="bg-black hover:bg-gray-700 text-white font-bold mt-2 py-2 px-4 rounded">
+                          Details
+                      </button>
+                  </div>
+              </div>
+
+
+          </div>
+
+
+
+
+      {% comment %} About us section  {% endcomment %}
+
+      
+          <div class="bg-rose-300  my-8 px-8">
+              <div class="flex md:flex-row flex-col items-center">
+                  
+                  <!-- Two-thirds with button -->
+
+
+                  <div class="lg:w-2/3 flex flex-col justify-center items-center p-6 ">
+                      <p class="sm:text-2xl text-center  font-black text-black">Be a volunteer and help one of the flourishing charities aid foundation of Maharashtra make a meaningful impact in the community. 
+                        </p>
+                      <button class="bg-black hover:bg-gray-700 text-white font-bold mt-2 py-2 px-4 rounded">
+                          Become a member 
+                      </button>
+                      
+                  </div>
+                  <!-- One-third with image -->
+                  <div class="min-w-[200px] w-1/3 mx-4 my-4 hidden md:block">
+                    <img src="{% static 'images/upcoming-banner.jpg' %}" />
+                  </div>
+              </div>
+          </div>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {% comment %} events choice section {% endcomment %}
+          <style>
+            .campaign_blog_inner .text_align_left {
+                text-align: center;
+            }
+            
+            .campaign_blog_inner h4.campaign-heading {
+                text-align: center;
+            }
+            
+            .campaign_blog_inner p {
+                text-align: center;
+            }
+            .campaign_blog{
+                padding: 5px;
+                border-radius: 10px;
+                box-shadow: 1px 2px 5px 7px #ccc;
+                {% comment %} margin-bottom: 30px; {% endcomment %}
+              }
+              campaign-images-reponsive{
+                max-height: 10px;
+                height:auto;
+                width:auto;
+              }
+                        
+            .campaign_blog {
+                overflow: hidden;
+                {% comment %} margin:  0 0; {% endcomment %}
+            }
+
+            .campaign_img {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .campaign_blog:hover img, .campaign_blog:focus img {
+                transition: ease all 0.5s;
+                transform: scale(1.2);
+            }
+            
+            .campaign_blog:hover .campaign_head::after,.campaign_blog:focus .campaign_head::after {
+                width: 100%;
+            }
+
+            .campaign_head::after {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 100%;
+                background: #be123c ;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: ease all 0.5s;
+            }
+
+            .campaign_head {
+                text-align: center;
+                padding: 18px 20px;
+                background: #000000;
+                position: relative;
+                color: #fff;
+                font-weight: 500;
+                font-size: 24px;
+            }
+
+            .campaign_head h5 {
+                color: #fff;
+                font-weight: 500;
+                font-size: 19px;
+                text-transform: none;
+                position: relative;
+                z-index: 1;
+            }
+
+            .campaign_head h5 a {
+                color: #fff;
+            }
+
+            .campaign_head a {
+                color: #fff;
+                position: relative;
+                z-index: 1;
+            }
+                        
+            .campaign_blog_inner2 .icon {
+                width: 95px;
+                height: 30px;
+                text-align: center;
+                line-height: 95px;
+                border-radius: 100%;
+                font-size: 40px;
+                color: #fff;
+                transition: ease all 0.5s;
+                border: solid #17a5e9 2px;
+                background: #17a5e9;
+            }
+
+            .campaign_blog_inner2 {
+                margin-bottom: 50px;
+                transition: ease all 0.5s;
+            }
+
+            .campaign_blog_inner2:hover .icon,
+            .campaign_blog_inner2:focus .icon {
+                border: solid #17a5e9 2px;
+                background: #fff;
+                color: #17a5e9;
+            }
+                        
+            .main_heading {
+                position: relative;
+                margin-bottom: 20px;
+                padding-top: 20px;
+
+            }
+
+            .main_heading h3 {
+                font-weight: 500;
+                font-size: 30px;
+                margin-bottom: 0;
+            }
+
+            .main_heading h2 span {
+                position: relative;
+            }
+
+            .main_heading h2 span::before {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 5px;
+                background: #be123c;
+                position: absolute;
+                left: 0;
+                transition: ease all 0.5s;
+                top: -5px;
+            }
+
+            .main_heading h2 span::after {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 5px;
+                background: #be123c;
+                position: absolute;
+                right: 0;
+                bottom: -5px;
+            }
+
+            .main_heading.text_align_left::after {
+                margin-left: 0;
+            }
+
+            .main_heading.text_align_right::after {
+                margin-right: 0;
+            }
+
+
+
+              
+          </style>
+          
+          <div id="campaigns_section">
+                <div style="padding-right: 10px; padding-left: 10px;">
+                    <div class=" main_heading text-center ">
+                        <h2><span class="text-center mb-2 font-extrabold md:text-5xl text-3xl">Campaigns</span></h2>
+                    </div>
+                </div>
+                    
+                <div class="md:flex justify-center items-center md:w-4/5 px-8 mx-auto">
+                    <div class="p-4 w-full relative">
+                        <div class="campaign_blog">
+                            <a href="web-based-campaigns/">
+                                <div class="campaign_img" style="box-shadow: 40px 0 80px rgb(0 0 0 / 15%);">
+                                    <img class="img-responsive campaign-images-reponsive transition-transform duration-500 transform hover:scale-110" src="{% static 'images/upcoming-banner.jpg' %}" alt="Design campaign">
+                                </div>
+                                <div class="campaign_head">
+                                    <h5>Web based campaigns</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-4 w-full relative">
+                        <div class="campaign_blog">
+                            <a href="web-based-campaigns/">
+                                <div class="campaign_img" style="box-shadow: 40px 0 80px rgb(0 0 0 / 15%);">
+                                    <img class="img-responsive campaign-images-reponsive transition-transform duration-500 transform hover:scale-110" src="{% static 'images/upcoming-banner.jpg' %}" alt="Design campaign">
+                                </div>
+                                <div class="campaign_head">
+                                    <h5>Web based campaigns</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>               
+                  
+               
+            
+         </div>
+
+
+{% comment %} section end {% endcomment %}
+
+
+
+
+
+
+
+
+
+{% comment %} ADD ABOUT US SECTION HERE {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} our team {% endcomment %}
+<!-- Our Team Section -->
+<div class="container mx-auto py-12">
+    <div style="padding-right: 10px; padding-left: 10px;">
+        <div class=" main_heading text-center ">
+            <h2><span class="text-center mb-2 font-extrabold md:text-4xl text-2xl">Our Founders</span></h2>
+        </div>
+    </div>
+
+    <div class="  grid grid-cols-1 w-3/4 sm:w-8/12 md:w-2/3 md:grid-cols-2 lg:grid-cols-2  md:gap-10  mx-auto  md:overflow-hidden">
+
+        <a href="https://prashmiinterio.com/">
+            <div class="bg-white   my-4 md:my-0 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img class="w-full h-1/2 md:h-3/5 object-cover object-center" src="{% static 'images/sample-pfp.jpg' %}" alt="Team Member 2">
+                <div class="p-2 lg:p-6 ">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">Jhon Doe</h3>
+                    <p class="text-gray-600 text-sm mb-2"> <span class= "font-semibold"> Position:</span> Marketing Coordinator</p>
+                    <p class="text-gray-700 ">Jane brings creativity and innovation to our marketing efforts. Jane brings creativity and innovation to our marketing efforts. Jane brings creativity and innovation to our marketing efforts. Jane brings creativity and innovation to our marketing efforts. 
+                        
+                    </p>
+                </div>
+            </div>
+        </a>
+
+
+        <a href="/www.google.com">
+            <div class="bg-white   my-4 md:my-0 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img class="w-full h-1/2 md:h-3/5 object-cover object-center" src="{% static 'images/sample-pfp.jpg' %}" alt="Team Member 2">
+                <div class="p-2 lg:p-6 ">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">Jhon Doe</h3>
+                    <p class="text-gray-600 text-sm mb-2"> <span class= "font-semibold"> Position:</span> Marketing Coordinator</p>
+                    <p class="text-gray-700 ">Jane brings creativity and innovation to our marketing efforts. Jane brings creativity and innovation to our marketing efforts. Jane brings creativity and innovation to our marketing efforts. Jane brings creativity and innovation to our marketing efforts. 
+                        
+                    </p>
+                </div>
+            </div>
+        </a>
+        
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+      
+
+{% endblock %}

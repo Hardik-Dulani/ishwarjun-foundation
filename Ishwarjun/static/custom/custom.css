@@ -1,0 +1,37 @@
+/* * {
+    color:#be123c;
+}
+ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header-links li span {
+    position: relative;
+    z-index: 0;
+    
+
+  }
+
+.header-links li span::before {
+content: '';
+position: absolute;
+z-index: -1;
+bottom: -6px;
+left: -6px;
+right: -6px;
+display: block;
+height: 6px;
+transform: scaleX(0);
+transition: transform 0.3s ease-in-out;
+background-color: #be123c;
+
+}
+
+.header-links li:not(.active):hover span::before {
+
+background-color: #be123c;
+transform: scaleX(1);
+}
+
